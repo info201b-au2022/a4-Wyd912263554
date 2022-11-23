@@ -1,7 +1,7 @@
 ---
-title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
-date: '2022-11-01'
+title: "Assignment 4: Incarceration"
+author: "Edward Wu"
+date: '2022-11-22'
 output: html_document
 ---
 
@@ -52,7 +52,7 @@ According to the chart, the Latino prison population has grown since 1980. Unlik
 plot_jail_pop_1970()
 ```
 
-``` {r plot map}
+``` {r plot map2}
 plot_jail_pop_2016()
 ```
 
