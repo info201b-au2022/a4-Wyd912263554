@@ -10,36 +10,54 @@ source("../source/a4-helpers.R")
 source("../source/analysis.R")
 ```
 
-## Abstract 
-[TODO: Include a short abstract (about 50 words)]
-
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
+## Abstract
+For this report, the main points are the trend of incarceration and county-level variability makes different and theoretically-grounded studies of the high rates of incarceration seen across the United States. These purposes are vital because incarceration is the most intuitive example of studying crime rate and crime ratio. To explore this aspect, I will analyze dataset from incarceration-trends and provide several plots for data visualization.
 
 ## Introduction 
-[TODO]
+Incarceration is the act of imprisoning someone or the state of being imprisoned. It can reflect changes in the level of law and order in various places, the type of criminal detention, and the crime rate. However, this set of data also expose patterns of inequality by listing incarceration rates by gender, race and region. Different descriptions will cause different results and value orientation. Therefore, it may lead to framing effects which focus on subjective bias that leads people to make evaluations based on benefits and harms. When people see that Latinos and African Americans make up a large percentage of the criminal population, they would develop a race-based bias which would cause racial criminalization and racial disparities. According to the data of Vera institute, black people are twice as likely to be arrested as white people. Therefore, drastically reducing the use of jails, prisons, and detention centers is necessary.
+
+For the direct stakeholders, they are the users and researchers who take the dataset. They can draw conclusions and publish persuasive reports through data analysis. For the indirect stakeholders, they are the jails whose structures have been improved by data analysis. Also they are rationally deployed judges and judicial system.
+
+Questions:
+Which state has the most prisoners?
+What is the changing trend of criminals in the past three years?
+What is the mean of total criminals in the past three years?
 
 ## Data Summary 
-[TODO]
+According to the data, firstly I summarize the state which has the most prisoners. From the results, California, with its many demographic and economic advantages, can be a key research object. Secondly I summarize the counties with most prisoners in each state because accreting down to the county level can reveal more detail. In addition, by summarizing the state-by-state averages over the years, the number of prison populations varies widely across regions. These values can also help researchers to study the inequality of prisons and prisoners in the region. Judging from the changes in the number of prisoners in the past three years, although some areas have shown an upward trend, the number of people in the United States has shown a downward trend. This shows that the level of public security is improving. However, looking at trends that vary from state to state, the uneven levels of development across regions might be a main reason of patterns of inequality. 
 
-[TODO ... other sections ... See Canvas for details]
+## Secion 3
+```{r plot trend}
+plot_jail_pop_for_us()
+```
+
+Unfortunately, while society has been evolving, the number of people going to prison has been on the rise. This is a threat to the security of the country and the daily life of the people. What's more, this upward trend didn't stop and slowed down until around 2010, which is good news.
+
+## Secion 4
+```{r plot trend by states}
+plot_jail_pop_for_states(select_state)
+```
+
+According to the three lines from the chart, after comparing the trends in these three states, I found that California has the fastest and largest population growth rate. Comparing Washington state and Wyoming, their curve is relatively flat. But the Washington state with large population and the economic growth is faster. These lines reflect regional difference.
+
+## Secion 5
+``` {r plot latinx population by states}
+plot_latinx_pop_by_states()
+```
+
+According to the chart, the Latino prison population has grown since 1980. Unlike blacks and whites, this growth trends occurred later. This also corresponds to the immigration wave at that time. With the influx of a large number of Latino immigrants, the security of the United States is facing new challenges. In addition, Latino prison populations vary widely across states, reflecting patterns of inequality between regions.
+
+## Section 6
+``` {r plot map}
+plot_jail_pop_1970()
+```
+
+``` {r plot map}
+plot_jail_pop_2016()
+```
+
+By comparing the prison population distribution of the two maps, the number and density of prison populations have increased a lot in recent years compared with the past. On the one hand, the population is increasing year by year, and on the other hand, the crime rate is increasing due to some social factors. What's more, it is clear that a large, economically developed area like California has always had a large prison population. Therefore, In order to reduce the pressure on public security, the government should rationally allocate resources and optimize the urban structure of these highly urbanized areas.
+
 
 _All the very best with your work!_
 
